@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CardViewGrades</string>
+    <string name="action_settings">Settings</string>
+    <string-array name="ListElements">
+        <item>Materia 1</item>
+        <item>Materia 2</item>
+        <item>Materia 3</item>
+        <item>Materia 4</item>
+        <item>Materia 5</item>
+        <item>Materia 6</item>
+        <item>Materia 7</item>
+    </string-array>
+</resources>
