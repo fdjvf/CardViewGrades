@@ -3,30 +3,24 @@ package co.edu.uninorte.cardviewgrades;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.security.PrivilegedAction;
 import java.util.ArrayList;
-import java.util.List;
-
-import static android.R.layout.simple_list_item_1;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ListView MyListView;
-    private NewRow temp;
     ArrayList<gradesubject> ListElements;
      int i=2;
+    private ListView MyListView;
+    private NewRow temp;
+
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,13 +39,13 @@ public class MainActivity extends AppCompatActivity {
             String mat="Materia "+i;
              i=i+1;
                 ListElements.add(new gradesubject(mat));
-                temp = new NewRow(getApplicationContext(),ListElements);
+                temp.Data = ListElements;
                 MyListView.setAdapter(temp);
             }
         });
 
         MyListView=(ListView) findViewById(R.id.MyListView);
-        temp = new NewRow(getApplicationContext(),ListElements);
+        temp = new NewRow(this, ListElements);
         MyListView.setAdapter(temp);
 
         MyListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -106,6 +100,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void ActionRow(View view) {
 
-        Toast.makeText(this, "HALPPP ", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "HALPPP ", Toast.LENGTH_SHORT).show();//ALFINNNNNN
     }
 }

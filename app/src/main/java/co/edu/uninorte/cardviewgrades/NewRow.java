@@ -3,22 +3,21 @@ package co.edu.uninorte.cardviewgrades;
 /**
  * Created by fdjvf on 3/6/2017.
  */
+
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 
 public class NewRow extends BaseAdapter {
+    public ArrayList<gradesubject> Data;
     private Context MyContext;
-    private ArrayList<gradesubject> Data;
 
 
     public NewRow(Context context, ArrayList<gradesubject> data) {
@@ -57,17 +56,7 @@ public class NewRow extends BaseAdapter {
         MyButton.setFocusable(false);
         MyButton.setFocusableInTouchMode(false);
         MyButton.setTag(position);
-        MyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent MyIntent;
-                MyIntent = new Intent(MyContext, gradeact.class);
-                gradesubject t=Data.get(position);
-                t.Index=position;
-                MyIntent.putExtra("Element",t);
-                MyContext.startActivity((MyIntent));
-            }
-        });
+
 
         return convertView;
     }
